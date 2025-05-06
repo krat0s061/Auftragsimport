@@ -1,4 +1,3 @@
-
 import streamlit as st
 import fitz  # PyMuPDF
 import re
@@ -17,7 +16,7 @@ def extract_text_from_pdf(pdf_file):
 
 def extract_fields(text):
     fields = {
-        "Load latest": re.search(r"(\d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})", text),
+        "Load latest": re.search(r"\d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2}", text),
         "Loading place": re.search(r"Legmeerdijk.*?Aalsmeer", text),
         "Flightnumber / Shipment details": re.search(r"(43cc.*?)\n", text),
         "Specials": "Standaard koeler, keine ADR, HACCP-konform, Temperatur-Datalogger, Palettentausch",
